@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import { Col, Grid } from "react-native-easy-grid";
 
 import styles from './Styles.js';
@@ -11,11 +11,13 @@ export default class Menu extends React.Component {
             <View style={mainStyles.container}>
                 <Grid style={styles.container}>
                     <Col style={styles.column}>
-                        <Text style={styles.menuItemHeader}>CLASSIC</Text>
-                        <Text style={styles.menuItemText}>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nullam varius placerat urna interdum laoreet. Mauris commodo effictur nunc.
-                        </Text>
+                        <TouchableOpacity onPress={() => this.navigateToMenu('WineList')}>
+                            <Text style={styles.menuItemHeader}>CLASSIC</Text>
+                            <Text style={styles.menuItemText}>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nullam varius placerat urna interdum laoreet. Mauris commodo effictur nunc.
+                            </Text>
+                        </TouchableOpacity>
                     </Col>
                     <Col style={styles.column}>
                         <Text style={styles.menuItemHeader}>ROCK 'N ROLL</Text>
@@ -34,5 +36,9 @@ export default class Menu extends React.Component {
                 </Grid>
             </View>
         )
+    }
+
+    navigateToMenu = (menu) => {
+        this.props.navigation.navigate(menu);
     }
 }

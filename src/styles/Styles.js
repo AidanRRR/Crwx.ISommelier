@@ -5,5 +5,8 @@ export default StyleSheet.create({
     container: {
         backgroundColor: "white",
         height: "100%"
+    },
+    whiteContainer: {
+        backgroundColor: "white"
     }
 });  
