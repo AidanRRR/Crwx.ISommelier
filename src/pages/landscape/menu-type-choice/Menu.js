@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Col, Grid } from "react-native-easy-grid";
 
 import styles from './Styles.js';
 import mainStyles from '../../../styles/Styles.js';
@@ -8,9 +9,29 @@ export default class Menu extends React.Component {
     render() {
         return (
             <View style={mainStyles.container}>
-                <Text>Classic</Text>
-                <Text>Rock 'n Roll</Text>
-                <Text>Basement</Text>
+                <Grid style={styles.container}>
+                    <Col style={styles.column}>
+                        <Text style={styles.menuItemHeader}>CLASSIC</Text>
+                        <Text style={styles.menuItemText}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nullam varius placerat urna interdum laoreet. Mauris commodo effictur nunc.
+                        </Text>
+                    </Col>
+                    <Col style={styles.column}>
+                        <Text style={styles.menuItemHeader}>ROCK 'N ROLL</Text>
+                        <Text style={styles.menuItemText}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nullam varius placerat urna interdum laoreet. Mauris commodo effictur nunc.
+                        </Text>
+                    </Col>
+                    <Col style={styles.column}>
+                        <Text style={styles.menuItemHeader}>BASEMENT</Text>
+                        <Text style={styles.menuItemText}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nullam varius placerat urna interdum laoreet. Mauris commodo effictur nunc.
+                        </Text>
+                    </Col>
+                </Grid>
             </View>
         )
     }
